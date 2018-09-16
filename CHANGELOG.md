@@ -1,13 +1,10 @@
 # Changelog - A.v1
 
 ## Things we added:
-+ Tutorial system.
-+ Email system.
++ Email 1.
++ Task 1.
 
 ## Things we removed:
-- Initial age requirement.
-- Original name.
 
 ## Other things we did:
-+ Code reduction.
-+ Remade code.
++ Minor changes to tutorial system.
