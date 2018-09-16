@@ -171,7 +171,7 @@ TextWindow.WriteLine("--Encrypted Server | Secured--")
 TextWindow.ForegroundColor = "White"
 TextWindow.WriteLine("Enter your name: ")
 nameinput = TextWindow.Read()
-TextWindow.WriteLine("Okay " + nameinput + " now lets get some more info. Type cont to continue.")
+TextWindow.WriteLine("Okay, " + nameinput + " now lets get some more info. Type cont to continue.")
 cont1 = TextWindow.Read()
   If cont1 = "cont" Then
     TextWindow.Clear()
@@ -250,8 +250,12 @@ input1 = TextWindow.Read()
     Connect()
   elseif input1 = "tip" then
     TextWindow.WriteLine("Enter your emails, you may have gotten one.")
+    Program.Delay(2000)
+    Goto desk1
   elseif input1 = "Tip" then
     TextWindow.WriteLine("Enter your emails, you may have gotten one.")
+    Program.Delay(2000)
+    Goto desk1
   elseif input1 = "emails" then
     Goto emails1
   elseif input1 = "Emails" then
@@ -308,17 +312,17 @@ TextWindow.WriteLine("----------------------------------------------------------
 TextWindow.ForegroundColor = "Red"
 TextWindow.WriteLine("ERROR: We are going to be honest we don't know how this happened.  Error Code: #2412")
 TextWindow.ForegroundColor = "White"
-TextWindow.WriteLine("Type back to go back to the character creation.")
+TextWindow.WriteLine("Type exit to exit the program.")
 TextWindow.WriteLine("-----------------------------------------------------------------------------------------------")
-back1 = TextWindow.Read()
-  If back1 = "back" Then
-    Goto charcreation
-  ElseIf back1 = "Back" then
-    Goto charcreation
+exit1 = TextWindow.Read()
+  If exit1 = "exit" Then
+    Program.End()
+  ElseIf exit1 = "Exit" then
+    Program.End()
   Else
-    Goto charcreationerror
+    Goto generalerror
   endif  
-    Goto charcreationerror 
+Goto generalerror 
     
 Sub help
     TextWindow.WriteLine("help = runs the help menu.")
@@ -338,7 +342,7 @@ Sub Connect
     Program.Delay(2000)
     TextWindow.WriteLine("Enter Connection Address: ")
     input2 = TextWindow.Read()
-      If input2 = "pawnshop312" Then 
+      If input2 = "pawnshop321" Then 
         Goto username1
       Else 
         Connect()
@@ -363,7 +367,23 @@ Sub Connect
    
 Sub pawnshopaccessed
   TextWindow.Clear()
-  Program.Delay(10000000000)
+  TextWindow.ForegroundColor = "Red"
+  TextWindow.WriteLine("----------------------------------")
+  TextWindow.WriteLine("Welcome back, " + nameinput + ".")
+  TextWindow.WriteLine("----------------------------------")
+  TextWindow.WriteLine("Connected to pawnshop321")
+  TextWindow.WriteLine("Type help for a list of commands.")
+  TextWindow.WriteLine("Type tip for some help.")
+  TextWindow.ForegroundColor = "Yellow"
+  TextWindow.WriteLine("This program was created by Gabe Oliver")
+  TextWindow.ForegroundColor = "White"
+  input4 = TextWindow.Read()
+  If input4 = "help" Then
+    TextWindow.WriteLine("help = runs the help menu.")
+    TextWindow.WriteLine("")
+    TextWindow.WriteLine("tip = stuck? have the machine help you.")
+    TextWindow.WriteLine("emails = opens your email inbox.")
+    TextWindow.WriteLine("logout = brings you back to the homescreen.")
 endsub
 
 emails1:
@@ -375,7 +395,7 @@ viewemail1 = TextWindow.Read()
   ElseIf viewemail1 = "View" then
     Goto email1
   Else 
-    Goto generalerror
+    Goto emails1
   EndIf
   
 email1:
@@ -383,5 +403,19 @@ Textwindow.Clear()
 TextWindow.WriteLine("I need your help - jb@pawnshop.com")
 TextWindow.WriteLine("Hey, " + nameinput + " I recently got fired from my job. They said they were replacing me with a better person, I was wondering if you could hack into their system and figure out who my replacement is.")
 TextWindow.WriteLine("You are going to need the connection information.")
-TextWindow.WriteLine("")
-  
+TextWindow.WriteLine("Connection Adress: pawnshop321")
+TextWindow.WriteLine("Username: pawn")
+TextWindow.WriteLine("Passcode admin")
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("To connect to this goto your desktop and type connect.")
+TextWindow.WriteLine("To EXIT this email type exit.")
+TextWindow.ForegroundColor = "White"
+input3 = TextWindow.Read()
+if input3 = "exit" Then
+  Goto desk1
+ElseIf input3 = "Exit" then
+  Goto desk1
+Else 
+  Goto email1
+endif
+Goto email1
