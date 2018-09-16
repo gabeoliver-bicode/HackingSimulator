@@ -1,11 +1,11 @@
-#Changelog - A.v1
+# Changelog - A.v1
 
-##Things we added:
+## Things we added:
 + Tutorial system.
 + Email system.
 + Code reduction.
 + Remade code.
 
-##Things we removed:
+## Things we removed:
 - Initial age requirement.
 - Original name.
