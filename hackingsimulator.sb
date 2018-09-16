@@ -1,0 +1,387 @@
+
+'----------------------------------------------------------------
+'This program was created and edited by Gabe Oliver
+'All Rights Reserved
+'----------------------------------------------------------------
+
+homescreen:
+TextWindow.Clear()
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("Gr4y M4773R Games INC.")
+TextWindow.WriteLine("Created by Gabe Oliver")
+TextWindow.ForegroundColor = "Yellow"
+TextWindow.WriteLine("To play the game type play")
+TextWindow.WriteLine("Type exit to leave the game")
+TextWindow.ForegroundColor = "White"
+playgame = TextWindow.Read()
+
+  if playgame = "play" Then
+    goto playgame
+  elseif playgame = "Play" Then
+    goto playgame
+  elseif playgame = "exit" Then
+    Program.End()
+  elseif playgame = "Exit" Then
+    Program.End()
+  Else 
+    goto homescreen
+  endif
+
+playgame:
+TextWindow.Clear()
+TextWindow.WriteLine("LOADING")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Clear()
+TextWindow.WriteLine("LOADING")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Clear()
+TextWindow.WriteLine("LOADING")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+TextWindow.Write(".")
+Program.Delay(100)
+Program.Delay(1000)
+Goto tutorialp1
+Goto playgame
+
+tutorialp1:
+TextWindow.Clear()
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("Machine: Hello? Hello!?")
+Program.Delay(1000)
+TextWindow.WriteLine("Machine: Oh good, *clears throat*. You kinda had me nervious there for a second.")
+Program.Delay(3000)
+TextWindow.WriteLine("Machine: Anyways ... how are you?")
+Program.Delay(1000)
+TextWindow.WriteLine("Machine: Nevermind I don't really care, lets get to business.")
+Program.Delay(4000)
+TextWindow.Clear()
+TextWindow.WriteLine("Machine: Before we can get you started we need to get to know you.")
+TextWindow.WriteLine("Machine: I am redirecting you to a secure window to ")
+TextWindow.ForegroundColor = "White"
+Program.Delay(8000)
+Goto charcreation
+Goto tutorialp1
+ 
+tutorialp2:
+TextWindow.Clear()
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine(" Machine: Outstanding work! Now we can get started. First we need to get familiar to the console commands.")
+TextWindow.WriteLine("type help for a list of your console commands.")
+Program.Delay(3000)
+TextWindow.WriteLine("Machine: OH! And whenever you are typing commands or anything in this program make sure capslock isnt on.")
+TextWindow.ForegroundColor = "White"
+tutorialhelp1 = TextWindow.Read()
+  If tutorialhelp1 = "Help" Then
+    TextWindow.ForegroundColor = "Red"
+    TextWindow.WriteLine("Machine: Console commands are used to access your files, hack others, and do basic functions you would do on a computer.")
+    Program.Delay(3000)
+    TextWindow.WriteLine("Machine: Uh, for example. Say someone was going to pay you to connect to a database; on your desktop you would run")
+    TextWindow.WriteLine("the command connect. Below are more of the commands you can run.")
+    Program.Delay(3000)
+    TextWindow.ForegroundColor = "White"
+    TextWindow.WriteLine("help = runs the help menu.")
+    TextWindow.WriteLine("connect = opens the connect terminal.")
+    TextWindow.WriteLine("tip = stuck? have the machine help you.")
+    TextWindow.WriteLine("emails = opens your email inbox.")
+    TextWindow.WriteLine("logout = brings you back to the homescreen.")
+    Program.Delay(5000)
+    TextWindow.Clear()
+    TextWindow.WriteLine("Machine: Okay, " + nameinput + " I think you are ready to goto your desktop.")
+    Program.Delay(1000)
+    TextWindow.WriteLine("Machine: type desktop to go to your desktop. This will end the tutorial. If you have further questions type tip in your desktop.")
+    desktop1 = TextWindow.Read()
+      If desktop1 = "desktop" Then
+        Goto desk1
+      ElseIf desktop1 = "Desktop" then
+        Goto desk1
+      Else
+        Goto tutorialp2error
+      endif
+      
+  ElseIf tutorialhelp1 = "help" then
+    TextWindow.ForegroundColor = "Red"
+    TextWindow.WriteLine("Machine: Console commands are used to access your files, hack others, and do basic functions you would do on a computer.")
+    Program.Delay(3000)
+    TextWindow.WriteLine("Machine: Uh, for example. Say someone was going to pay you to connect to a database; on your desktop you would run")
+    TextWindow.WriteLine("the command connect. Below are more of the commands you can run.")
+    Program.Delay(3000)
+    TextWindow.ForegroundColor = "White"
+    TextWindow.WriteLine("help = runs the help menu.")
+    TextWindow.WriteLine("connect = opens the connect terminal.")
+    TextWindow.WriteLine("tip = stuck? have the machine help you.")
+    TextWindow.WriteLine("emails = opens your email inbox.")
+    TextWindow.WriteLine("logout = brings you back to the homescreen.")
+    Program.Delay(5000)
+    TextWindow.Clear()
+    TextWindow.WriteLine("Machine: Okay, " + nameinput + " I think you are ready to goto your desktop.")
+    Program.Delay(1000)
+    TextWindow.WriteLine("Machine: type desktop to go to your desktop. This will end the tutorial. If you have further questions type tip in your desktop.")
+    desktop1 = TextWindow.Read()
+      If desktop1 = "desktop" Then
+        Goto desk1
+      ElseIf desktop1 = "Desktop" then
+        Goto desk1
+      Else
+        Goto tutorialp2error
+      endif
+  Else
+    Goto tutorialp2
+  endif
+  
+Goto tutorialp2
+
+charcreation:
+TextWindow.Clear()
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("--Encrypted Server | Secured--")
+TextWindow.ForegroundColor = "White"
+TextWindow.WriteLine("Enter your name: ")
+nameinput = TextWindow.Read()
+TextWindow.WriteLine("Okay " + nameinput + " now lets get some more info. Type cont to continue.")
+cont1 = TextWindow.Read()
+  If cont1 = "cont" Then
+    TextWindow.Clear()
+    TextWindow.ForegroundColor = "Red"
+    TextWindow.WriteLine("--Encrypted Server | Secured--")
+    TextWindow.ForegroundColor = "White"
+    TextWindow.WriteLine("Okay " + nameinput + " what is your age?")
+    ageinput = TextWindow.Read()
+    TextWindow.WriteLine("Brilliant, now what is your gender?")
+    TextWindow.WriteLine("M for Male")
+    TextWindow.WriteLine("F for Female")
+    TextWindow.WriteLine("TP for Triggered person")
+    genderinput = TextWindow.Read()
+      If genderinput = "M" Then
+        genderinput = "Male"
+      ElseIf genderinput = "F" then
+        genderinput = "Female"
+      ElseIf genderinput = "m" then
+        genderinput = "Male"
+      ElseIf genderinput = "f" then 
+        genderinput = "Female"
+      ElseIf genderinput = "TP" then
+        genderinput = "Triggered Person"
+      ElseIf genderinput = "tp" then
+        genderinput = "Triggered Person"
+      ElseIf genderinput = "Tp" then
+        genderinput = "Triggered Person"
+      ElseIf genderinput = "tP" then
+        genderinput = "Triggered Person"
+      Else
+        Goto charcreationerror
+      endif
+    TextWindow.WriteLine("Perfect! So we have all your info. Type y if this is correct or n if it isn't.")
+    Program.Delay(1000)
+    TextWindow.WriteLine("Your name is " + nameinput + ".")
+    TextWindow.WriteLine("You are " + ageinput + " years old.")
+    TextWindow.WriteLine("And you are a " + genderinput + ".")
+    yn1 = TextWindow.Read()
+      If yn1 = "Y" Then
+        Goto tutorialp2
+      ElseIf yn1 = "N" then
+        Goto charcreation
+      ElseIf yn1 = "y" then
+        Goto tutorialp2
+      ElseIf yn1 = "n" then
+        Goto charcreation
+      Else
+        Goto charcreationerror
+      EndIf
+  ElseIf cont1 = "Cont" then
+  
+  Else 
+    Goto charcreationerror
+  endif
+Goto charcreation
+
+desk1:
+TextWindow.Clear()
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("----------------------------------")
+TextWindow.WriteLine("Welcome back, " + nameinput + ".")
+TextWindow.WriteLine("----------------------------------")
+TextWindow.WriteLine("Don't know what to do? Type tip or help.")
+TextWindow.WriteLine("In your desktop you can type any command.")
+TextWindow.ForegroundColor = "Yellow"
+TextWindow.WriteLine("This program was created by Gabe Oliver")
+TextWindow.ForegroundColor = "White"
+input1 = TextWindow.Read()
+  If input1 = "help" Then
+    Help()
+  elseif input1 = "Help" then
+    Help()
+  elseif input1 = "connect" then
+    Connect()
+  elseif input1 = "Connect" then
+    Connect()
+  elseif input1 = "tip" then
+    TextWindow.WriteLine("Enter your emails, you may have gotten one.")
+  elseif input1 = "Tip" then
+    TextWindow.WriteLine("Enter your emails, you may have gotten one.")
+  elseif input1 = "emails" then
+    Goto emails1
+  elseif input1 = "Emails" then
+    Goto emails1
+  elseif input1 = "logout" then
+    Goto homescreen
+  elseif input1 = "Logout" then
+    Goto homescreen
+  else
+    Goto generalerror
+  endif
+
+Goto desk1
+
+tutorialp2error:
+TextWindow.Clear()
+TextWindow.WriteLine("-----------------------------------------------------------------------------------------------")
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("ERROR: You have caused an error. Reason for error: Spelling cont incorrectly. Error Code: #2412")
+TextWindow.ForegroundColor = "White"
+TextWindow.WriteLine("Type back to go back to the tutorial.")
+TextWindow.WriteLine("-----------------------------------------------------------------------------------------------")
+back1 = TextWindow.Read()
+  If back1 = "back" Then
+    Goto tutorialp2
+  ElseIf back1 = "Back" then
+    Goto tutorialp2
+  Else
+    Goto tutorialp2error
+  endif  
+Goto tutorialp2error
+  
+charcreationerror:
+TextWindow.Clear()
+TextWindow.WriteLine("-----------------------------------------------------------------------------------------------")
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("ERROR: You have caused an error. Reason for error: Spelling cont incorrectly. Error Code: #2412")
+TextWindow.ForegroundColor = "White"
+TextWindow.WriteLine("Type back to go back to the character creation.")
+TextWindow.WriteLine("-----------------------------------------------------------------------------------------------")
+back1 = TextWindow.Read()
+  If back1 = "back" Then
+    Goto charcreation
+  ElseIf back1 = "Back" then
+    Goto charcreation
+  Else
+    Goto charcreationerror
+  endif  
+    Goto charcreationerror
+  
+generalerror:
+TextWindow.Clear()
+TextWindow.WriteLine("-----------------------------------------------------------------------------------------------")
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("ERROR: We are going to be honest we don't know how this happened.  Error Code: #2412")
+TextWindow.ForegroundColor = "White"
+TextWindow.WriteLine("Type back to go back to the character creation.")
+TextWindow.WriteLine("-----------------------------------------------------------------------------------------------")
+back1 = TextWindow.Read()
+  If back1 = "back" Then
+    Goto charcreation
+  ElseIf back1 = "Back" then
+    Goto charcreation
+  Else
+    Goto charcreationerror
+  endif  
+    Goto charcreationerror 
+    
+Sub help
+    TextWindow.WriteLine("help = runs the help menu.")
+    TextWindow.WriteLine("connect = opens the connect terminal.")
+    TextWindow.WriteLine("tip = stuck? have the machine help you.")
+    TextWindow.WriteLine("emails = opens your email inbox.")
+    TextWindow.WriteLine("logout = brings you back to the homescreen.")
+endsub 
+
+Sub Connect
+    TextWindow.Clear()
+    TextWindow.ForegroundColor = "Red"
+    TextWindow.WriteLine("------------------------")
+    TextWindow.WriteLine("Secure Connection Window")
+    TextWindow.WriteLine("------------------------")
+    TextWindow.ForegroundColor = "White"
+    Program.Delay(2000)
+    TextWindow.WriteLine("Enter Connection Address: ")
+    input2 = TextWindow.Read()
+      If input2 = "pawnshop312" Then 
+        Goto username1
+      Else 
+        Connect()
+      endif
+    username1:
+    TextWindow.WriteLine("Enter Username: ")
+    username1 = TextWindow.Read()
+      If username1 = "pawn" Then
+        Goto passcode1
+      Else
+        Connect()
+      endif
+     passcode1:
+     TextWindow.WriteLine("Enter Passcode: ")
+     passcode1 = TextWindow.Read()
+     If passcode1 = "admin" Then 
+       pawnshopaccessed()
+     Else 
+       Connect()
+     endif
+   endsub
+   
+Sub pawnshopaccessed
+  TextWindow.Clear()
+  Program.Delay(10000000000)
+endsub
+
+emails1:
+TextWindow.Clear()
+TextWindow.WriteLine("INCOMMING EMAIL FROM Josh Boley TYPE view TO VIEW THE EMAIL")
+viewemail1 = TextWindow.Read()
+  If viewemail1 = "view" Then
+    Goto email1
+  ElseIf viewemail1 = "View" then
+    Goto email1
+  Else 
+    Goto generalerror
+  EndIf
+  
+email1:
+Textwindow.Clear()  
+TextWindow.WriteLine("I need your help - jb@pawnshop.com")
+TextWindow.WriteLine("Hey, " + nameinput + " I recently got fired from my job. They said they were replacing me with a better person, I was wondering if you could hack into their system and figure out who my replacement is.")
+TextWindow.WriteLine("You are going to need the connection information.")
+TextWindow.WriteLine("")
+  
