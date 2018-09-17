@@ -9,6 +9,9 @@ This game is a hacking simulator. You get to run terminal commands to hack into 
 ```
 2. After downloading the repository. Run the .exe file inside the downloaded folder.
 ```
+```
+NOTE: Be sure you are installing the .dll files and other files in the same directory you run the .exe or you will get errors.
+```
 
 ## Contributing
 
