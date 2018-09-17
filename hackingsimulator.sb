@@ -384,6 +384,7 @@ Sub pawnshopaccessed
     TextWindow.WriteLine("tip = stuck? have the machine help you.")
     TextWindow.WriteLine("emails = opens your email inbox.")
     TextWindow.WriteLine("logout = brings you back to the homescreen.")
+  endif
 endsub
 
 emails1:
