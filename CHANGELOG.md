@@ -1,10 +1,10 @@
-# Changelog - A.v1
+# Changelog - A.v15
 
 ## Things we added:
-+ Email 1.
-+ Task 1.
++ Other required files needed to run the program.
 
 ## Things we removed:
 
+
 ## Other things we did:
-+ Minor changes to tutorial system.
++ Fixed the error where you couldn't run the program.
