@@ -245,9 +245,9 @@ input1 = TextWindow.Read()
   elseif input1 = "Help" then
     Help()
   elseif input1 = "connect" then
-    Connect()
+    Goto connect
   elseif input1 = "Connect" then
-    Connect()
+    Goto connect
   elseif input1 = "tip" then
     TextWindow.WriteLine("Enter your emails, you may have gotten one.")
     Program.Delay(2000)
@@ -330,9 +330,10 @@ Sub help
     TextWindow.WriteLine("tip = stuck? have the machine help you.")
     TextWindow.WriteLine("emails = opens your email inbox.")
     TextWindow.WriteLine("logout = brings you back to the homescreen.")
+    Program.Delay(5000)
 endsub 
 
-Sub Connect
+connect:
     TextWindow.Clear()
     TextWindow.ForegroundColor = "Red"
     TextWindow.WriteLine("------------------------")
@@ -345,7 +346,7 @@ Sub Connect
       If input2 = "pawnshop321" Then 
         Goto username1
       Else 
-        Connect()
+        Goto connect
       endif
     username1:
     TextWindow.WriteLine("Enter Username: ")
@@ -353,7 +354,7 @@ Sub Connect
       If username1 = "pawn" Then
         Goto passcode1
       Else
-        Connect()
+        Goto connect
       endif
      passcode1:
      TextWindow.WriteLine("Enter Passcode: ")
@@ -361,9 +362,9 @@ Sub Connect
      If passcode1 = "admin" Then 
        pawnshopaccessed()
      Else 
-       Connect()
+       Goto connect
      endif
-   endsub
+
    
 Sub pawnshopaccessed
   TextWindow.Clear()
@@ -378,12 +379,45 @@ Sub pawnshopaccessed
   TextWindow.WriteLine("This program was created by Gabe Oliver")
   TextWindow.ForegroundColor = "White"
   input4 = TextWindow.Read()
-  If input4 = "help" Then
-    TextWindow.WriteLine("help = runs the help menu.")
-    TextWindow.WriteLine("")
-    TextWindow.WriteLine("tip = stuck? have the machine help you.")
-    TextWindow.WriteLine("emails = opens your email inbox.")
-    TextWindow.WriteLine("logout = brings you back to the homescreen.")
+    If input4 = "help" Then
+      TextWindow.WriteLine("help = runs the help menu.")
+      TextWindow.WriteLine("staffreplacements = This shows are recent replacements.")
+      TextWindow.WriteLine("tip = stuck? have the machine help you.")
+      TextWindow.WriteLine("clients = opens the client box.")
+      TextWindow.WriteLine("logout = brings you back to your desktop.")
+      Program.Delay(5000)
+      pawnshopaccessed()
+    elseif input4 = "Help" then
+      TextWindow.WriteLine("help = runs the help menu.")
+      TextWindow.WriteLine("staffreplacements = This shows are recent replacements.")
+      TextWindow.WriteLine("tip = stuck? have the machine help you.")
+      TextWindow.WriteLine("clients = opens the client box.")
+      TextWindow.WriteLine("logout = brings you back to your desktop.")
+      Program.Delay(5000)
+      pawnshopaccessed()
+    elseif input4 = "staffreplacements" then
+      TextWindow.Clear()
+      TextWindow.ForegroundColor = "Red"
+      TextWindow.WriteLine("-------------------")
+      TextWindow.WriteLine("Staff Replacements:")
+      TextWindow.WriteLine("-------------------")
+      TextWindow.ForegroundColor = "White"
+      TextWindow.WriteLine("Most recent: ")
+      TextWindow.WriteLine("Josh Bowley replaced with Brandon Peters.")
+      TextWindow.WriteLine("Yung How replaced with Trent Kniffin.")
+      TextWindow.ForegroundColor = "Red"
+      TextWindow.WriteLine("Machine: Okay I am back so now you have your information you need to go back to your desktop and enter your emails to send him that information.")
+      TextWindow.WriteLine("To exit this document type exit.")
+      input5 = TextWindow.Read()
+      If input5 = "exit" then
+        pawnshopaccessed()
+      elseif input5 = "Exit" then
+        pawnshopaccessed()
+      Else
+        pawnshopaccessed()
+      endif 
+    elseif input4 = "tip" then
+     TextWindow.WriteLine("Enter the staff replacements by typing that command. If you don't know that command, type help.") 
   endif
 endsub
 
