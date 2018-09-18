@@ -1,10 +1,13 @@
-# Changelog - A.v15
+# Changelog - A.v20
 
 ## Things we added:
-+ Other required files needed to run the program.
++ Finishing task1 now works.
++ Staff replacements for task1 works.
 
 ## Things we removed:
-
+- Sub Routine for pawnshop and made that a goto variable.
 
 ## Other things we did:
-+ Fixed the error where you couldn't run the program.
++ Fixed the TIP error, where it sends you back to the desktop.
++ Fixed the help error, where you type help and nothing happens in task1.
+
