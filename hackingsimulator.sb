@@ -90,9 +90,9 @@ TextWindow.WriteLine("Machine: Nevermind I don't really care, lets get to busine
 Program.Delay(4000)
 TextWindow.Clear()
 TextWindow.WriteLine("Machine: Before we can get you started we need to get to know you.")
-TextWindow.WriteLine("Machine: I am redirecting you to a secure window to ")
+TextWindow.WriteLine("Machine: Fill out your information in the following secure window. ")
 TextWindow.ForegroundColor = "White"
-Program.Delay(8000)
+Program.Delay(4000)
 Goto charcreation
 Goto tutorialp1
  
@@ -204,11 +204,15 @@ cont1 = TextWindow.Read()
       Else
         Goto charcreationerror
       endif
+    TextWindow.WriteLine("Please enter a desktop passcode. Make sure you remember this: ")
+      desktoppass = TextWindow.Read()
+    Program.Delay(2000)
     TextWindow.WriteLine("Perfect! So we have all your info. Type y if this is correct or n if it isn't.")
     Program.Delay(1000)
     TextWindow.WriteLine("Your name is " + nameinput + ".")
     TextWindow.WriteLine("You are " + ageinput + " years old.")
-    TextWindow.WriteLine("And you are a " + genderinput + ".")
+    TextWindow.WriteLine("You are a " + genderinput + ".")
+    TextWindow.WriteLine("And your desktop passcode will be " + desktoppass + ".")
     yn1 = TextWindow.Read()
       If yn1 = "Y" Then
         Goto tutorialp2
@@ -222,7 +226,57 @@ cont1 = TextWindow.Read()
         Goto charcreationerror
       EndIf
   ElseIf cont1 = "Cont" then
-  
+  TextWindow.Clear()
+    TextWindow.ForegroundColor = "Red"
+    TextWindow.WriteLine("--Encrypted Server | Secured--")
+    TextWindow.ForegroundColor = "White"
+    TextWindow.WriteLine("Okay " + nameinput + " what is your age?")
+    ageinput = TextWindow.Read()
+    TextWindow.WriteLine("Brilliant, now what is your gender?")
+    TextWindow.WriteLine("M for Male")
+    TextWindow.WriteLine("F for Female")
+    TextWindow.WriteLine("TP for Triggered person")
+    genderinput = TextWindow.Read()
+      If genderinput = "M" Then
+        genderinput = "Male"
+      ElseIf genderinput = "F" then
+        genderinput = "Female"
+      ElseIf genderinput = "m" then
+        genderinput = "Male"
+      ElseIf genderinput = "f" then 
+        genderinput = "Female"
+      ElseIf genderinput = "TP" then
+        genderinput = "Triggered Person"
+      ElseIf genderinput = "tp" then
+        genderinput = "Triggered Person"
+      ElseIf genderinput = "Tp" then
+        genderinput = "Triggered Person"
+      ElseIf genderinput = "tP" then
+        genderinput = "Triggered Person"
+      Else
+        Goto charcreationerror
+      endif
+    TextWindow.WriteLine("Please enter a desktop passcode. Make sure you remember this: ")
+      desktoppass = TextWindow.Read()
+    Program.Delay(2000)
+    TextWindow.WriteLine("Perfect! So we have all your info. Type y if this is correct or n if it isn't.")
+    Program.Delay(1000)
+    TextWindow.WriteLine("Your name is " + nameinput + ".")
+    TextWindow.WriteLine("You are " + ageinput + " years old.")
+    TextWindow.WriteLine("You are a " + genderinput + ".")
+    TextWindow.WriteLine("And your desktop passcode will be " + desktoppass + ".")
+    yn1 = TextWindow.Read()
+      If yn1 = "Y" Then
+        Goto tutorialp2
+      ElseIf yn1 = "N" then
+        Goto charcreation
+      ElseIf yn1 = "y" then
+        Goto tutorialp2
+      ElseIf yn1 = "n" then
+        Goto charcreation
+      Else
+        Goto charcreationerror
+      EndIf
   Else 
     Goto charcreationerror
   endif
