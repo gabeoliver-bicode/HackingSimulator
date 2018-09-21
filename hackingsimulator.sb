@@ -90,7 +90,7 @@ TextWindow.WriteLine("Machine: Nevermind I don't really care, lets get to busine
 Program.Delay(4000)
 TextWindow.Clear()
 TextWindow.WriteLine("Machine: Before we can get you started we need to get to know you.")
-TextWindow.WriteLine("Machine: I am redirecting you to a secure window to ")
+TextWindow.WriteLine("Machine: Fill out your information in the following secure window. ")
 TextWindow.ForegroundColor = "White"
 Program.Delay(8000)
 Goto charcreation
