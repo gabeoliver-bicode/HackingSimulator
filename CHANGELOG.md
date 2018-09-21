@@ -1,13 +1,13 @@
-# Changelog - A.v20
+# Changelog
+This changelog tells you the different things we do within our updates. If you are confused about an update you can check to see what we added / removed.
 
-## Things we added:
-+ Finishing task1 now works.
-+ Staff replacements for task1 works.
+## av.0.3.10 (Direct Derma)
+### Fixed
+* When typing "tip" and it redirects you to the email in task1.
+* When typing "help" and it redirects you to the email in task1.
 
-## Things we removed:
-- Sub Routine for pawnshop and made that a goto variable.
+### Changed
+* Changed the way the original code was written. Re-wrote to make it smooth.
 
-## Other things we did:
-+ Fixed the TIP error, where it sends you back to the desktop.
-+ Fixed the help error, where you type help and nothing happens in task1.
-
+### Added
+* Users can now complete task1.
