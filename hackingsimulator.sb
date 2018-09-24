@@ -287,6 +287,7 @@ TextWindow.Clear()
 TextWindow.ForegroundColor = "Red"
 TextWindow.WriteLine("----------------------------------")
 TextWindow.WriteLine("Welcome back, " + nameinput + ".")
+TextWindow.WriteLine("Current Ballance: $0")
 TextWindow.WriteLine("----------------------------------")
 TextWindow.WriteLine("Don't know what to do? Type tip or help.")
 TextWindow.WriteLine("In your desktop you can type any command.")
@@ -319,10 +320,67 @@ input1 = TextWindow.Read()
   elseif input1 = "Logout" then
     Goto homescreen
   else
-    Goto generalerror
+    Goto desk2
   endif
-
 Goto desk1
+
+desk2:
+TextWindow.Clear()
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("----------------------------------")
+TextWindow.WriteLine("Welcome back, " + nameinput + ".")
+TextWindow.WriteLine("Current Ballance: $0")
+TextWindow.WriteLine("----------------------------------")
+TextWindow.WriteLine("Don't know what to do? Type tip or help.")
+TextWindow.WriteLine("In your desktop you can type any command.")
+TextWindow.ForegroundColor = "Yellow"
+TextWindow.WriteLine("This program was created by Gabe Oliver")
+TextWindow.ForegroundColor = "White"
+input1 = TextWindow.Read()
+  If input1 = "help" Then
+    Help()
+  elseif input1 = "Help" then
+    Help()
+  elseif input1 = "connect" then
+    Goto connect
+  elseif input1 = "Connect" then
+    Goto connect
+  elseif input1 = "tip" then
+    TextWindow.WriteLine("Enter your emails, you may have gotten one.")
+    Program.Delay(2000)
+    Goto desk1
+  elseif input1 = "Tip" then
+    TextWindow.WriteLine("Enter your emails, you may have gotten one.")
+    Program.Delay(2000)
+    Goto desk1
+  elseif input1 = "emails" then
+    Goto emails2
+  elseif input1 = "Emails" then
+    Goto emails2
+  elseif input1 = "logout" then
+    Goto homescreen
+  elseif input1 = "Logout" then
+    Goto homescreen
+  else
+    Goto desk2
+  endif
+Goto desk1
+
+desk3:
+TextWindow.WriteLine("CONGRATS! YOU HAVE COMPLETED TASK1!")
+Program.Delay(4000)
+TextWindow.Clear()
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("----------------------------------")
+TextWindow.WriteLine("Welcome back, " + nameinput + ".")
+TextWindow.WriteLine("Current Ballance: $200")
+TextWindow.WriteLine("----------------------------------")
+TextWindow.WriteLine("Don't know what to do? Type tip or help.")
+TextWindow.WriteLine("In your desktop you can type any command.")
+TextWindow.ForegroundColor = "Yellow"
+TextWindow.WriteLine("This program was created by Gabe Oliver")
+TextWindow.ForegroundColor = "White"
+
 
 tutorialp2error:
 TextWindow.Clear()
@@ -464,15 +522,16 @@ Sub pawnshopaccessed
       TextWindow.WriteLine("To exit this document type exit.")
       input5 = TextWindow.Read()
       If input5 = "exit" then
-        pawnshopaccessed()
+        Goto desk2
       elseif input5 = "Exit" then
-        pawnshopaccessed()
+        Goto desk2
       Else
         pawnshopaccessed()
       endif 
     elseif input4 = "tip" then
       TextWindow.WriteLine("Enter the staff replacements by typing that command. If you don't know that command, type help.") 
-      Program.Delay(50000000)
+      Program.Delay(3000)
+      pawnshopaccessed()
   endif
 endsub
 
@@ -488,6 +547,35 @@ viewemail1 = TextWindow.Read()
     Goto emails1
   EndIf
   
+emails2:
+TextWindow.Clear()
+TextWindow.WriteLine("INCOMMING EMAIL FROM Josh Boley TYPE view TO VIEW THE EMAIL")
+viewemail1 = TextWindow.Read()
+  If viewemail1 = "view" Then
+    Goto email1
+  ElseIf viewemail1 = "View" then
+    Goto email2
+  Else 
+    Goto emails2
+  EndIf
+  
+email2:
+Textwindow.Clear()
+TextWindow.WriteLine("Thank you so much! - jb@pawnshop.com")
+TextWindow.WriteLine("Hey, " + nameinput + " Thank you so much for your help. I have sent you $200 for your information.")
+TextWindow.ForegroundColor = "Red"
+TextWindow.WriteLine("To EXIT this email type exit.")
+TextWindow.ForegroundColor = "White"
+input3 = TextWindow.Read()
+if input3 = "exit" Then
+  Goto desk3
+ElseIf input3 = "Exit" then
+  Goto desk3
+Else 
+  Goto email2
+endif
+Goto email2
+
 email1:
 Textwindow.Clear()
 TextWindow.WriteLine("I need your help - jb@pawnshop.com")
