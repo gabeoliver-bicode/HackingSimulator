@@ -284,6 +284,19 @@ Goto charcreation
 
 desk1:
 TextWindow.Clear()
+TextWindow.WriteLine("Enter Desktop Passcode: ")
+input7 = TextWindow.Read()
+If input7 = desktoppass then
+  Goto desk1_correct
+Else
+  TextWindow.ForegroundColor = "Red"
+  TextWindow.WriteLine("INCORRECT PASSWORD!")
+  TextWindow.ForegroundColor = "White"
+  Program.Delay(2000)
+  Goto desk1
+endif
+desk1_correct:
+TextWindow.Clear()
 TextWindow.ForegroundColor = "Red"
 TextWindow.WriteLine("----------------------------------")
 TextWindow.WriteLine("Welcome back, " + nameinput + ".")
@@ -326,6 +339,19 @@ Goto desk1
 
 desk2:
 TextWindow.Clear()
+TextWindow.WriteLine("Enter Desktop Passcode: ")
+input7 = TextWindow.Read()
+If input7 = desktoppass then
+  Goto desk2_correct2
+Else
+  TextWindow.ForegroundColor = "Red"
+  TextWindow.WriteLine("INCORRECT PASSWORD!")
+  TextWindow.ForegroundColor = "White"
+  Program.Delay(2000)
+  Goto desk2
+endif
+desk2_correct2:
+TextWindow.Clear()
 TextWindow.ForegroundColor = "Red"
 TextWindow.WriteLine("----------------------------------")
 TextWindow.WriteLine("Welcome back, " + nameinput + ".")
@@ -348,11 +374,11 @@ input1 = TextWindow.Read()
   elseif input1 = "tip" then
     TextWindow.WriteLine("Enter your emails, you may have gotten one.")
     Program.Delay(2000)
-    Goto desk1
+    Goto desk2
   elseif input1 = "Tip" then
     TextWindow.WriteLine("Enter your emails, you may have gotten one.")
     Program.Delay(2000)
-    Goto desk1
+    Goto desk2
   elseif input1 = "emails" then
     Goto emails2
   elseif input1 = "Emails" then
@@ -364,7 +390,7 @@ input1 = TextWindow.Read()
   else
     Goto desk2
   endif
-Goto desk1
+Goto desk2
 
 desk3:
 TextWindow.WriteLine("CONGRATS! YOU HAVE COMPLETED TASK1!")
@@ -380,6 +406,7 @@ TextWindow.WriteLine("In your desktop you can type any command.")
 TextWindow.ForegroundColor = "Yellow"
 TextWindow.WriteLine("This program was created by Gabe Oliver")
 TextWindow.ForegroundColor = "White"
+Goto desk3
 
 
 tutorialp2error:
@@ -416,7 +443,7 @@ back1 = TextWindow.Read()
   Else
     Goto charcreationerror
   endif  
-    Goto charcreationerror
+Goto charcreationerror
   
 generalerror:
 TextWindow.Clear()
@@ -472,13 +499,13 @@ connect:
      TextWindow.WriteLine("Enter Passcode: ")
      passcode1 = TextWindow.Read()
      If passcode1 = "admin" Then 
-       pawnshopaccessed()
+       Goto pawnshopaccessed
      Else 
        Goto connect
      endif
-
+Goto connect
    
-Sub pawnshopaccessed
+pawnshopaccessed:
   TextWindow.Clear()
   TextWindow.ForegroundColor = "Red"
   TextWindow.WriteLine("----------------------------------")
@@ -498,7 +525,7 @@ Sub pawnshopaccessed
       TextWindow.WriteLine("clients = opens the client box.")
       TextWindow.WriteLine("logout = brings you back to your desktop.")
       Program.Delay(5000)
-      pawnshopaccessed()
+      Goto pawnshopaccessed
     elseif input4 = "Help" then
       TextWindow.WriteLine("help = runs the help menu.")
       TextWindow.WriteLine("staffreplacements = This shows are recent replacements.")
@@ -506,7 +533,7 @@ Sub pawnshopaccessed
       TextWindow.WriteLine("clients = opens the client box.")
       TextWindow.WriteLine("logout = brings you back to your desktop.")
       Program.Delay(5000)
-      pawnshopaccessed()
+      Goto pawnshopaccessed
     elseif input4 = "staffreplacements" then
       TextWindow.Clear()
       TextWindow.ForegroundColor = "Red"
@@ -526,15 +553,15 @@ Sub pawnshopaccessed
       elseif input5 = "Exit" then
         Goto desk2
       Else
-        pawnshopaccessed()
+        Goto pawnshopaccessed
       endif 
     elseif input4 = "tip" then
       TextWindow.WriteLine("Enter the staff replacements by typing that command. If you don't know that command, type help.") 
       Program.Delay(3000)
-      pawnshopaccessed()
+      Goto pawnshopaccessed
   endif
-endsub
-
+Goto pawnshopaccessed
+  
 emails1:
 TextWindow.Clear()
 TextWindow.WriteLine("INCOMMING EMAIL FROM Josh Boley TYPE view TO VIEW THE EMAIL")
@@ -546,18 +573,20 @@ viewemail1 = TextWindow.Read()
   Else 
     Goto emails1
   EndIf
+Goto emails1
   
 emails2:
 TextWindow.Clear()
 TextWindow.WriteLine("INCOMMING EMAIL FROM Josh Boley TYPE view TO VIEW THE EMAIL")
 viewemail1 = TextWindow.Read()
   If viewemail1 = "view" Then
-    Goto email1
+    Goto email2
   ElseIf viewemail1 = "View" then
     Goto email2
   Else 
     Goto emails2
   EndIf
+Goto emails2
   
 email2:
 Textwindow.Clear()
