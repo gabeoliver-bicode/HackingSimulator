@@ -284,6 +284,19 @@ Goto charcreation
 
 desk1:
 TextWindow.Clear()
+TextWindow.WriteLine("Enter Desktop Passcode: ")
+input7 = TextWindow.Read()
+If input7 = desktoppass then
+  Goto desk1_correct
+Else
+  TextWindow.ForegroundColor = "Red"
+  TextWindow.WriteLine("INCORRECT PASSWORD!")
+  TextWindow.ForegroundColor = "White"
+  Program.Delay(2000)
+  Goto desk1
+endif
+desk1_correct:
+TextWindow.Clear()
 TextWindow.ForegroundColor = "Red"
 TextWindow.WriteLine("----------------------------------")
 TextWindow.WriteLine("Welcome back, " + nameinput + ".")
@@ -325,6 +338,19 @@ input1 = TextWindow.Read()
 Goto desk1
 
 desk2:
+TextWindow.Clear()
+TextWindow.WriteLine("Enter Desktop Passcode: ")
+input7 = TextWindow.Read()
+If input7 = desktoppass then
+  Goto desk2_correct2
+Else
+  TextWindow.ForegroundColor = "Red"
+  TextWindow.WriteLine("INCORRECT PASSWORD!")
+  TextWindow.ForegroundColor = "White"
+  Program.Delay(2000)
+  Goto desk2
+endif
+desk2_correct2:
 TextWindow.Clear()
 TextWindow.ForegroundColor = "Red"
 TextWindow.WriteLine("----------------------------------")
